@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatAi.TranslatorPage">
+
+    <StackLayout Padding="10" BackgroundColor="#E3F2F1">
+        <Label Text="Введите текст для перевода"
+               TextColor="Black"
+               FontSize="24"
+               HorizontalOptions="Center" />
+        <Editor Placeholder="Введите текст..."
+                x:Name="userInput"
+                HeightRequest="100"
+                VerticalOptions="FillAndExpand"
+                AutoSize="TextChanges"/>
+        <Button Text="Перевести"
+                Clicked="OnTranslateButtonClicked"
+                HorizontalOptions="Center"/>
+        <Editor x:Name="resultLabel"
+               Text="Результат перевода"
+               TextColor="Black"
+               HeightRequest="100"  
+               VerticalOptions="FillAndExpand"/>
+    </StackLayout>
+</ContentPage>

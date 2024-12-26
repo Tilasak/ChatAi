@@ -1,0 +1,39 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatAi.ChatPage">
+
+    <Grid BackgroundColor="#E3F2F1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="RemainingRequestsLabel" TextColor="Black" 
+               HorizontalOptions="Start" VerticalOptions="Start" 
+               FontSize="Small" Margin="10" />
+
+        <ScrollView Grid.Row="1">
+            <StackLayout x:Name="ChatHistory" />
+        </ScrollView>
+
+        <StackLayout  Grid.Row="2" Orientation="Horizontal" 
+                     VerticalOptions="EndAndExpand" 
+                     HorizontalOptions="FillAndExpand" 
+                     Margin="10">
+            <Entry x:Name="UserInput" Placeholder="Введите сообщение" 
+                   HorizontalOptions="FillAndExpand" 
+                   Margin="0,0,10,0" />
+
+            <ImageButton Source="air.png" 
+                         WidthRequest="30" HeightRequest="30" 
+                         Clicked="OnSendClicked" 
+                         BackgroundColor="Transparent"/>
+        </StackLayout>
+
+        <Button Text="+" WidthRequest="40" HeightRequest="40" 
+                HorizontalOptions="End" VerticalOptions="Start" 
+                Clicked="OnRateResponseClicked" 
+                Margin="10" Grid.Row="0" />
+    </Grid>
+</ContentPage>
